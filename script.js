@@ -22,14 +22,24 @@ const cards = [
       img: "https://github.com/robgmerrill/img/blob/master/sass-logo.png?raw=true"
     }
   ];
+
+//додаткові масиви
+var choosenCards = [];
+var choosenCardsId = [];
+
+
+
+
+
+
   var playCards = document.querySelectorAll("div.el");
   for (let i = 0; i < playCards.length; i++) {
+    playCards[i].setAttribute("id", i) //встановлюємо id для кожної картки
     playCards[i].addEventListener("click", function () {
-      this.style.display = "none";
+      this.style.backgroundImage = `url(${shuffleArray[i].img})`;
     });
   }
+  
   let array = [...cards, ...cards],
     shuffleArray = array.sort(() => 0.5 - Math.random());
-  
-  console.log(array[1]);
   

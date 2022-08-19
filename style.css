@@ -1,7 +1,8 @@
 .el{
+    background: center / cover darkcyan;
     width:100px;
     height:100px;
-    background: darkcyan;
+
     border-radius:10px;
     cursor:pointer;
     
