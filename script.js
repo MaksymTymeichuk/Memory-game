@@ -43,7 +43,7 @@ var choosenCardsId = [];
       if(choosenCards.length === 2){
         console.log("!")
         setTimeout(function(){//відстрочка виконання функції
-            if(choosenCards[0] === choosenCards[1]){
+            if(choosenCards[0] === choosenCards[1] && choosenCardsId[0] != choosenCardsId[1]){
                 playCards[choosenCardsId[0]].style.visibility = "hidden"
                 playCards[choosenCardsId[1]].style.visibility = "hidden" //приховуємо картки
             }
