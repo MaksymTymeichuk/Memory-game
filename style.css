@@ -1,0 +1,30 @@
+.el{
+    width:100px;
+    height:100px;
+    background: darkcyan;
+    border-radius:10px;
+    cursor:pointer;
+    
+    }
+    body{
+    background:greenyellow;
+    text-align:center;
+    
+    }
+    .main_frame{
+      display:flex;
+      flex-wrap:wrap;
+      width: 550px;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto;
+    }
+    @media(min-width: 1100px){
+      .main_frame{
+        width: 1080px;
+      }
+      .el{
+        width: 200px;
+        height: 200px;
+      }
+    }
