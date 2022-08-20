@@ -1,4 +1,4 @@
-var audio = new Audio('game.mp3');
+var audio = new Audio('game.mp3')
  lose_sound = new Audio('lose.mp3')
  win_sound = new Audio('pop.mp3')
  attempts = document.getElementById("try")
@@ -36,6 +36,8 @@ const cards = [
 //додаткові масиви
 var choosenCards = [];
 var choosenCardsId = [];
+var couple_count = 0
+result = 0
 
 
 
@@ -55,11 +57,18 @@ var choosenCardsId = [];
                 playCards[choosenCardsId[0]].style.visibility = "hidden"
                 playCards[choosenCardsId[1]].style.visibility = "hidden" //приховуємо картки
                 win_sound.play();
+                couple_count+=1
+                if (couple_count == 5){
+                  result = sec
+                  document.getElementById("result").InnerText = `Час за який ви пройшли гру:${result}`;
+                  document.getElementById("result").style.visibility = "visible"
+                  console.log("succes")
+                } 
                 try{
                   playCards[choosenCardsId[2]].style.backgroundImage = "none"
                 }
                 catch{
-                  console.log(1)
+                  console.log('ok')
                }
                 
             }
