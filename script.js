@@ -1,3 +1,13 @@
+var audio = new Audio('game.mp3');
+ lose_sound = new Audio('lose.mp3')
+ win_sound = new Audio('pop.mp3')
+ attempts = document.getElementById("try")
+ attempts_var = 0
+
+  audio.play();
+
+
+
 const cards = [
     {
       name: "html",
@@ -30,8 +40,6 @@ var choosenCardsId = [];
 
 
 
-
-
   var playCards = document.querySelectorAll("div.el");
   for (let i = 0; i < playCards.length; i++) {
     playCards[i].setAttribute("id", i) //встановлюємо id для кожної картки
@@ -46,10 +54,25 @@ var choosenCardsId = [];
             if(choosenCards[0] === choosenCards[1] && choosenCardsId[0] != choosenCardsId[1]){
                 playCards[choosenCardsId[0]].style.visibility = "hidden"
                 playCards[choosenCardsId[1]].style.visibility = "hidden" //приховуємо картки
+                win_sound.play();
+                try{
+                  playCards[choosenCardsId[2]].style.backgroundImage = "none"
+                }
+                catch{
+                  console.log(1)
+               }
+                
             }
                 else{
-                playCards[choosenCardsId[0]].style.backgroundImage = "none"
-                playCards[choosenCardsId[1]].style.backgroundImage = "none"
+                  attempts_var+=1
+                  attempts.style.textContent = `Attempts:(${attempts_var})`;
+                for(let i = 0;i<choosenCards.length;i++){
+                  
+                  console.log(i)
+                  playCards[choosenCardsId[i]].style.backgroundImage = "none"
+                lose_sound.play();
+                }
+                
             }
             choosenCardsId = []
             choosenCards = []
@@ -61,4 +84,4 @@ var choosenCardsId = [];
   
   let array = [...cards, ...cards],
     shuffleArray = array.sort(() => 0.5 - Math.random());
-  
+    

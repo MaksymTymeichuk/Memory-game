@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
+
+h1{
+  font-family: 'DynaPuff', cursive;
+}
+.try{
+  font-size:21.6px;
+  font-weight: 600;
+}
 .el{
     background: center / cover rgb(113, 194, 194);
     width:100px;
