@@ -64,8 +64,8 @@ var choosenCardsId = [];
                 
             }
                 else{
-                  attempts_var+=1
-                  attempts.style.textContent = `Attempts:(${attempts_var})`;
+                 // attempts_var+=1
+                 // attempts.style.textContent = `Attempts:(${attempts_var})`;
                 for(let i = 0;i<choosenCards.length;i++){
                   
                   console.log(i)
@@ -84,4 +84,19 @@ var choosenCardsId = [];
   
   let array = [...cards, ...cards],
     shuffleArray = array.sort(() => 0.5 - Math.random());
+
+    // cекундомір
+var sec = 0;
+function initSec() {
+  sec = 0;
+  setInterval(tick, 1000);
+}
+
+function tick() {
+  sec++;
+  let timer = document.getElementById("timer");
+  timer.innerText = `Час:${sec}`;
+}
+
+initSec();
     
