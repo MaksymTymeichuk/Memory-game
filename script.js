@@ -60,7 +60,7 @@ result = 0
                 couple_count+=1
                 if (couple_count == 5){
                   result = sec
-                  document.getElementById("result").InnerText = `Час за який ви пройшли гру:${result}`;
+                  document.getElementById("result").innerText = `Час за який ви пройшли гру:${result}`;
                   document.getElementById("result").style.visibility = "visible"
                   console.log("succes")
                 } 
