@@ -2,6 +2,8 @@
 var lose_sound = new Audio('lose.mp3');
  win_sound = new Audio('pop.mp3')
 
+ localStorage.setItem("winner","unknown")
+ localStorage.setItem("record", 999)
 
 
 
@@ -51,15 +53,21 @@ result = 0
       choosenCardsId.push(this.id)
       // коли в масива дві картки
       if(choosenCards.length === 2){
-        console.log("!")
         setTimeout(function(){//відстрочка виконання функції
             if(choosenCards[0] === choosenCards[1] && choosenCardsId[0] != choosenCardsId[1]){
                 playCards[choosenCardsId[0]].style.visibility = "hidden"
                 playCards[choosenCardsId[1]].style.visibility = "hidden" //приховуємо картки
+                win_sound.currentTime = 0;
                 win_sound.play();
                 couple_count+=1
                 if (couple_count == 5){
                   result = sec
+                  
+                  if(localStorage.getItem("record")<result){
+                    localStorage.setItem("record",result)
+                    localStorage.setItem("winner",prompt())
+                  }
+                  localStorage.setItem("score",`${result} с.`)
                   count = 0
                   document.getElementById("result").style.position = "relative"
                   if (sec.toString().substr(-1) == "1" && sec.toString().substr(0) != "1"){
@@ -73,7 +81,8 @@ result = 0
                   }
                   document.getElementById("result").style.visibility = "visible"
                   document.getElementById("result").style.opacity = "100"
-                  console.log("succes")
+
+
                 } 
                 try{
                   playCards[choosenCardsId[2]].style.backgroundImage = "none"
@@ -88,7 +97,6 @@ result = 0
                  // attempts.style.textContent = `Attempts:(${attempts_var})`;
                 for(let i = 0;i<choosenCards.length;i++){
                   
-                  console.log(i)
                   playCards[choosenCardsId[i]].style.backgroundImage = "none"
                 lose_sound.play();
                 }
