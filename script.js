@@ -62,7 +62,15 @@ result = 0
                   result = sec
                   count = 0
                   document.getElementById("result").style.position = "relative"
-                  document.getElementById("result").innerText = `Час за який ви пройшли гру:${result}`;
+                  if (sec.toString().substr(-1) == "1" && sec.toString().substr(0) != "1"){
+                    document.getElementById("result").innerText = `Ви пройшли гру за ${result} секунду` ;
+                  }
+                  else if (sec.toString().substr(-1) == "2" && sec.toString().substr(-1) == "3" && sec.toString().substr(-1) == "4" && sec.toString().substr(0) != "1"){
+                    document.getElementById("result").innerText = `Ви пройшли гру за ${result} секунди` ;
+                  }
+                  else{
+                    document.getElementById("result").innerText = `Ви пройшли гру за ${result} секунд` ;
+                  }
                   document.getElementById("result").style.visibility = "visible"
                   document.getElementById("result").style.opacity = "100"
                   console.log("succes")
