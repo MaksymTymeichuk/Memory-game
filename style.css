@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
 h1{
   font-family: 'DynaPuff', cursive;
 }
@@ -19,7 +19,7 @@ h1{
     body{
     background:greenyellow;
     text-align:center;
-    
+
     }
     .main_frame{
       display:flex;
@@ -46,18 +46,20 @@ h1{
   font-weight:100px;
 }
 .result{
-  visibility:hidden;
+  top: 100px;
+  font-family: 'Concert One', cursive;
   display:flex;
   position:absolute;
   margin: 0 auto;
+  visibility:hidden;
+  opacity:0;
   background: white;
-  margin-left:568px;
   justify-content:center;
   align-items:center;
   border-radius:200px;
   color:black;
-  border:solid 5px gray;
+  border:solid 20px gray;
   transition:1s all;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }

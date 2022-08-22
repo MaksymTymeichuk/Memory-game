@@ -1,10 +1,9 @@
-var audio = new Audio('game.mp3')
- lose_sound = new Audio('lose.mp3')
+var audio = new Audio('game.mp3');
+ lose_sound = new Audio('lose.mp3');
  win_sound = new Audio('pop.mp3')
- attempts = document.getElementById("try")
- attempts_var = 0
 
-  audio.play();
+
+
 
 
 
@@ -37,6 +36,7 @@ const cards = [
 var choosenCards = [];
 var choosenCardsId = [];
 var couple_count = 0
+var count = 1
 result = 0
 
 
@@ -60,8 +60,11 @@ result = 0
                 couple_count+=1
                 if (couple_count == 5){
                   result = sec
+                  count = 0
+                  document.getElementById("result").style.position = "relative"
                   document.getElementById("result").innerText = `Час за який ви пройшли гру:${result}`;
                   document.getElementById("result").style.visibility = "visible"
+                  document.getElementById("result").style.opacity = "100"
                   console.log("succes")
                 } 
                 try{
@@ -97,15 +100,16 @@ result = 0
     // cекундомір
 var sec = 0;
 function initSec() {
+  audio.play();
   sec = 0;
   setInterval(tick, 1000);
 }
 
 function tick() {
-  sec++;
+  sec+= count;
   let timer = document.getElementById("timer");
   timer.innerText = `Час:${sec}`;
 }
 
 initSec();
-    
+     
