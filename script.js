@@ -1,5 +1,5 @@
-var audio = new Audio('game.mp3');
- lose_sound = new Audio('lose.mp3');
+
+var lose_sound = new Audio('lose.mp3');
  win_sound = new Audio('pop.mp3')
 
 
@@ -100,7 +100,7 @@ result = 0
     // cекундомір
 var sec = 0;
 function initSec() {
-  audio.play();
+
   sec = 0;
   setInterval(tick, 1000);
 }
@@ -108,8 +108,14 @@ function initSec() {
 function tick() {
   sec+= count;
   let timer = document.getElementById("timer");
+  
   timer.innerText = `Час:${sec}`;
 }
 
 initSec();
-     
+
+
+
+var audio = new Audio('game.mp3');
+audio.autoplay = true;
+audio.play()
