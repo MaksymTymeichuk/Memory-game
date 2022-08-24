@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 h1{
   font-family: 'DynaPuff', cursive;
 }
@@ -44,6 +45,7 @@ h1{
   text-shadow: 5px 5px gold;
   font-size:50px;
   font-weight:100px;
+
 }
 .result{
   top: 100px;
@@ -63,3 +65,32 @@ h1{
   width: 200px;
   height: 200px;
 }
+.records{
+  display:flex;
+  flex-wrap:wrap;
+  position:absolute;
+  background: lightsteelblue;
+  font-size:55px;
+  width: 100px;
+  height: 500px;
+  margin:0 auto;
+  cursor:pointer;
+  border-radius: 10px;
+  border:solid 10px  white;
+  font-family: 'Audiowide', cursive;
+}
+.record_window{
+  width: 500px;
+  height: 500px;
+  max-width: 60px;
+  margin-left:100px;
+  position:absolute;
+  background: white;
+  border-radius:0px 10px 10px 0px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  transition:1s all;
+}
+

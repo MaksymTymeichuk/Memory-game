@@ -63,7 +63,7 @@ result = 0
                 if (couple_count == 5){
                   result = sec
                   
-                  if(localStorage.getItem("record")<result){
+                  if(localStorage.getItem("record")>result){
                     localStorage.setItem("record",result)
                     localStorage.setItem("winner",prompt())
                   }
@@ -134,4 +134,24 @@ initSec();
 
 var audio = new Audio('game.mp3');
 audio.autoplay = true;
+var checkclick = 1
 audio.play()
+document.getElementById("record").addEventListener("click",function(){
+  if  (checkclick == 1){
+    this.style.fontSize = "30px"
+    this.style.maxWidth= "300px"
+    this.style.overflow = "visible"
+    checkclick = 0
+    console.log("ok")
+    this.innerText =  localStorage.getItem("winner")+":"+localStorage.getItem("record")
+    
+  }
+  else{
+    this.style.maxWidth= "60px"
+    this.style.overflow = "hidden"
+    checkclick = 1
+    this.style.fontSize = "55px"
+    this.innerText = ">"
+  }
+  
+})
