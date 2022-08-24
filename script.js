@@ -2,8 +2,6 @@
 var lose_sound = new Audio('lose.mp3');
  win_sound = new Audio('pop.mp3')
 
- localStorage.setItem("winner","unknown")
- localStorage.setItem("record", 999)
 
 
 
