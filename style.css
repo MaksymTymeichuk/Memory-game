@@ -39,28 +39,7 @@ h1{
         height: 200px;
       }
     }
-    @media(max-width: 500px){
-      .records{
-        position:absolute;
-        width: 10px;
-        height: 10px;
-        font-size:10px;
-      }
-      .main_frame{
-        width: 300px;
-      }
-      .el{
-        border-radius:10px;
-        width: 50px;
-        height: 50px;
-      }
-      .result{
-        width: 40px;
-        height: 40px;
-      }
-      
-    }
-
+    
 .timer{
   color:blueviolet;
   text-shadow: 5px 5px gold;
@@ -116,5 +95,37 @@ h1{
   align-items:center;
   overflow:hidden;
   transition:1s all;
+}
+
+
+@media(max-width: 700px){
+  .records{
+    width: 50px;
+    height: 250px;
+    font-size:30px;
+    rotate:-90deg;
+    position:absolute;
+    margin-top:100px;
+    margin-left:305px;
+
+  }
+  .record_window{
+    width: 250px;
+    height: 250px;
+    margin-left:55px;
+  }
+  .main_frame{
+    width: 300px;
+  }
+  .el{
+    border-radius:10px;
+    width: 50px;
+    height: 50px;
+  }
+  .result{
+    width: 40px;
+    height: 40px;
+  }
+  
 }
 
