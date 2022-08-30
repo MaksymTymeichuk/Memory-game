@@ -80,6 +80,8 @@ h1{
   font-family: 'Audiowide', cursive;
 }
 .record_window{
+  display:flex;
+  flex-wrap:wrap;
   width: 500px;
   height: 500px;
   max-width: 60px;
@@ -87,7 +89,7 @@ h1{
   position:absolute;
   background: white;
   border-radius:0px 10px 10px 0px;
-  display:flex;
+  
   justify-content:center;
   align-items:center;
   overflow:hidden;

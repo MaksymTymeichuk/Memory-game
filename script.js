@@ -2,11 +2,6 @@
 var lose_sound = new Audio('lose.mp3');
  win_sound = new Audio('pop.mp3')
 
-
-
-
-
-
 const cards = [
     {
       name: "html",
@@ -38,10 +33,11 @@ var choosenCardsId = [];
 var couple_count = 0
 var count = 1
 result = 0
+var Records = ''
+var Winners = ''
 
 
-
-
+var localStorage
   var playCards = document.querySelectorAll("div.el");
   for (let i = 0; i < playCards.length; i++) {
     playCards[i].setAttribute("id", i) //встановлюємо id для кожної картки
@@ -60,11 +56,12 @@ result = 0
                 couple_count+=1
                 if (couple_count == 5){
                   result = sec
-                  
-                  if(localStorage.getItem("record")>result){
-                    localStorage.setItem("record",result)
-                    localStorage.setItem("winner",prompt())
-                  }
+                  console.log(localStorage.getItem("record"))
+                    localStorage.setItem("record",Records+","+result)
+                    localStorage.setItem("winner",Winners+","+prompt())
+                    Records = localStorage.getItem("record").split(",")
+                    Winners = localStorage.getItem("winner").split(",")
+                    console.log(Records,"+",Winners)
                   localStorage.setItem("score",`${result} с.`)
                   count = 0
                   document.getElementById("result").style.position = "relative"
@@ -141,7 +138,10 @@ document.getElementById("record").addEventListener("click",function(){
     this.style.overflow = "visible"
     checkclick = 0
     console.log("ok")
-    this.innerText =  localStorage.getItem("winner")+":"+localStorage.getItem("record")
+    this.innerHTML  = ''
+    for (let i = 0;i<Records.length;i++){
+      this.innerHTML += Winners[i]+":"+Records[i]+"<br>"; 
+    }
     
   }
   else{
