@@ -98,7 +98,7 @@ h1{
 }
 
 
-@media(max-width: 700px){
+@media(max-width: 900px){
   .records{
     width: 50px;
     height: 250px;
