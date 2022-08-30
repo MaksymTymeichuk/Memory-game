@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+h1{
+  font-family: 'DynaPuff', cursive;
+}
+.try{
+  font-size:21.6px;
+  font-weight: 600;
+}
 .el{
     background: center / cover rgb(113, 194, 194);
     width:100px;
@@ -10,7 +20,7 @@
     body{
     background:greenyellow;
     text-align:center;
-    
+
     }
     .main_frame{
       display:flex;
@@ -29,3 +39,93 @@
         height: 200px;
       }
     }
+    
+.timer{
+  color:blueviolet;
+  text-shadow: 5px 5px gold;
+  font-size:50px;
+  font-weight:100px;
+
+}
+.result{
+  top: 100px;
+  font-family: 'Concert One', cursive;
+  display:flex;
+  position:absolute;
+  margin: 0 auto;
+  visibility:hidden;
+  opacity:0;
+  background: white;
+  justify-content:center;
+  align-items:center;
+  border-radius:200px;
+  color:black;
+  border:solid 20px gray;
+  transition:1s all;
+  width: 200px;
+  height: 200px;
+}
+.records{
+  display:flex;
+  flex-wrap:wrap;
+  position:absolute;
+  background: lightsteelblue;
+  font-size:55px;
+  width: 150px;
+  height: 500px;
+  margin-top:-50px;
+  cursor:pointer;
+  
+  border-radius: 10px;
+  border:solid 10px  white;
+  font-family: 'Audiowide', cursive;
+}
+.record_window{
+  display:flex;
+  flex-wrap:wrap;
+  width: 500px;
+  height: 500px;
+  max-width: 60px;
+  margin-left:100px;
+  position:absolute;
+  background: white;
+  border-radius:0px 10px 10px 0px;
+  
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  transition:1s all;
+}
+
+
+@media(max-width: 900px){
+  .records{
+    width: 50px;
+    height: 250px;
+    font-size:30px;
+    rotate:-90deg;
+    position:absolute;
+    margin-top:100px;
+    margin-left:305px;
+
+  }
+  .record_window{
+    width: 250px;
+    height: 250px;
+    margin-left:55px;
+  }
+  .main_frame{
+    width: 300px;
+  }
+  .el{
+    border-radius:10px;
+    width: 50px;
+    height: 50px;
+  }
+  .result{
+    width: 40px;
+    height: 40px;
+  }
+  
+}
+
